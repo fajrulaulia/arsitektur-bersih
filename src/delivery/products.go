@@ -19,11 +19,9 @@ func NewProductDelivery(c usecase.ProductUsecaseIface) ProductDelivery {
 	}
 }
 
-func (d *ProductDelivery) Apply(e *echo.Echo) *echo.Echo {
+func (d *ProductDelivery) Apply(e *echo.Echo) {
 	e.POST("/product", d.Create)
 	e.GET("/product/:id", d.Get)
-
-	return e
 }
 
 func (d *ProductDelivery) Create(c echo.Context) error {
