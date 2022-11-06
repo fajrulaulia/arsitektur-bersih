@@ -25,7 +25,7 @@ func (c *ProductUsecaseStruct) InsertBarangBaru(code string, name string, price 
 	if err != nil {
 		return err
 	}
-	return nil
+	return err // Ini return error kosong
 }
 
 func (c *ProductUsecaseStruct) AmbilBarangBerdasarkanID(id string) (*products.ProductResponse, error) {
